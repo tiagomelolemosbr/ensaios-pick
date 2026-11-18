@@ -113,7 +113,7 @@
   .folha.on { display: flex; }
   .folha form { width: 100%; max-width: 560px; background: var(--paper); border-radius: 18px 18px 0 0; padding: 22px 20px calc(24px + env(safe-area-inset-bottom)); max-height: 92svh; overflow-y: auto; animation: sobe .25s ease-out; }
   @keyframes sobe { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
-  .folha .topo-f { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 6px; }
+  .folha .topo-f { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
   .folha h3 { font-family: var(--f-title); font-weight: 500; font-size: 23px; line-height: 1.15; }
   .folha .fechar { background: none; border: 0; font-family: var(--f-mono); font-size: 13px; color: var(--ink-soft); padding: 4px; cursor: pointer; }
   .folha .precos-f { font-family: var(--f-mono); font-size: 12px; color: var(--ink-soft); margin-bottom: 18px; line-height: 1.6; }
@@ -311,7 +311,6 @@ fbq('track', 'PageView');
       <h3 id="folha-t">Fazer orçamento</h3>
       <button class="fechar" type="button" aria-label="Fechar">fechar ✕</button>
     </div>
-    <p class="precos-f">Família, casal e gestante a partir de R$ 1.298<br>Casamento a partir de R$ 6.850</p>
     <label for="f-nome">Seu nome</label>
     <input id="f-nome" name="nome" autocomplete="given-name" maxlength="40" required>
     <label for="f-tel">Seu WhatsApp</label>
