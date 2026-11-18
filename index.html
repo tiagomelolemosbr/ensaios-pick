@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Felipe Pick · Fotografia em São Paulo</title>
+<meta name="description" content="Ensaios em São Paulo e região. Documental e artística. Família, casal, gestante e casamento.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@300;400;500&family=Big+Shoulders+Display:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: oklch(0.92 0.018 78);
+    --paper-2: oklch(0.885 0.022 75);
+    --ink: oklch(0.18 0.015 55);
+    --ink-soft: oklch(0.34 0.018 55);
+    --sienna: oklch(0.5 0.12 38);
+    --gold: oklch(0.74 0.105 75);
+    --rule: oklch(0.74 0.018 65);
+    --f-title: "Bricolage Grotesque", system-ui, sans-serif;
+    --f-body: "Instrument Sans", system-ui, sans-serif;
+    --f-mono: "JetBrains Mono", ui-monospace, monospace;
+    --f-eyebrow: "Big Shoulders Display", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--f-body); line-height: 1.5; }
+  img { display: block; max-width: 100%; }
+  .col { max-width: 560px; margin: 0 auto; }
+
+  /* Dobra 1 · Abertura */
+  .abertura { position: relative; min-height: 92svh; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; background: var(--ink); }
+  .abertura img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
+  .abertura::after { content: ""; position: absolute; inset: 0;
+    background: linear-gradient(to bottom, oklch(0.18 0.015 55 / 0.35) 0%, oklch(0.18 0.015 55 / 0) 22%, oklch(0.18 0.015 55 / 0) 45%, oklch(0.18 0.015 55 / 0.82) 100%); }
+  .abertura header { position: absolute; top: 0; left: 0; right: 0; z-index: 2; padding: 20px; text-align: center;
+    font-family: var(--f-title); font-weight: 500; font-size: 18px; letter-spacing: 0.01em; color: var(--paper); }
+  .abertura .texto { position: relative; z-index: 2; padding: 0 22px 34px; color: var(--paper); width: 100%; }
+  .eyebrow { font-family: var(--f-eyebrow); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; font-size: 21px; color: var(--paper); margin-bottom: 14px; text-shadow: 0 1px 12px oklch(0.18 0.015 55 / 0.6); }
+  .eyebrow::after { content: ""; display: block; width: 44px; height: 2px; background: var(--gold); margin-top: 10px; }
+  .abertura h1 { font-family: var(--f-title); font-weight: 500; font-size: clamp(30px, 8.6vw, 42px); line-height: 1.08; letter-spacing: -0.015em; margin-bottom: 14px; text-wrap: balance; }
+  .abertura p.sub { font-size: 16px; line-height: 1.5; color: oklch(0.92 0.018 78 / 0.88); max-width: 34ch; }
+  .abertura .ver { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; font-family: var(--f-mono); font-size: 13px; letter-spacing: 0.04em; color: var(--paper); text-decoration: none; border-bottom: 1px solid oklch(0.92 0.018 78 / 0.5); padding-bottom: 3px; }
+  .abertura .ver span { display: inline-block; animation: desce 1.8s ease-in-out infinite; }
+  @keyframes desce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(3px); } }
+  @media (prefers-reduced-motion: reduce) { .abertura .ver span { animation: none; } }
+
+
+  /* Dobra 2 · Perfil e galeria */
+  .perfil { padding: 28px 0 0; }
+  .perfil .topo { display: flex; align-items: center; gap: 22px; padding: 0 18px; }
+  .perfil .avatar { width: 86px; height: 86px; border-radius: 50%; flex: none; padding: 3px; background: conic-gradient(from 200deg, var(--gold), var(--sienna), var(--gold)); }
+  .perfil .avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid var(--paper); }
+  .perfil .numeros { display: flex; flex: 1; justify-content: space-around; text-align: center; }
+  .perfil .numeros b { display: block; font-family: var(--f-title); font-weight: 600; font-size: 20px; line-height: 1.1; }
+  .perfil .numeros span { font-size: 13px; color: var(--ink-soft); }
+  .perfil .bio { padding: 14px 18px 0; font-size: 14.5px; line-height: 1.45; }
+  .perfil .bio .nome { font-weight: 500; }
+  .perfil .bio .arroba { font-family: var(--f-mono); font-size: 12.5px; color: var(--ink-soft); }
+  .perfil .bio p { margin-top: 6px; }
+  .perfil .acoes { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 16px 18px 0; }
+  .btn { display: flex; align-items: center; justify-content: center; height: 40px; border-radius: 999px; font-family: var(--f-mono); font-size: 13px; letter-spacing: 0.02em; text-decoration: none; }
+  .btn-cta { background: var(--sienna); color: var(--paper); }
+  .btn-sec { background: var(--paper-2); color: var(--ink); border: 1px solid var(--rule); }
+  .destaques { display: flex; gap: 18px; padding: 22px 18px 18px; overflow-x: auto; scrollbar-width: none; }
+  .destaques::-webkit-scrollbar { display: none; }
+  .destaque { flex: none; display: flex; flex-direction: column; align-items: center; gap: 6px; background: none; border: 0; cursor: pointer; font-family: var(--f-body); font-size: 12.5px; color: var(--ink); }
+  .destaque i { width: 66px; height: 66px; border-radius: 50%; padding: 3px; border: 1px solid var(--rule); display: block; }
+  .destaque i img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+  .destaque[aria-pressed="true"] i { border: 2px solid var(--sienna); }
+  .destaque[aria-pressed="true"] { font-weight: 500; }
+  .abas { display: flex; border-top: 1px solid var(--rule); }
+  .abas span { flex: 1; text-align: center; padding: 10px 0; font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; border-top: 2px solid var(--ink); margin-top: -1px; }
+  .grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .grade button { aspect-ratio: 3 / 4; border: 0; padding: 0; background: var(--paper-2); cursor: zoom-in; overflow: hidden; }
+  .grade img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+  .grade button:hover img { transform: scale(1.03); }
+  .grade [hidden] { display: none; }
+  .ver-mais { display: block; margin: 16px auto 0; height: 44px; padding: 0 28px; border-radius: 999px; border: 1px solid var(--ink); background: none; color: var(--ink); font-family: var(--f-mono); font-size: 13px; letter-spacing: 0.02em; cursor: pointer; }
+  .ver-mais[hidden] { display: none; }
+  .zoom { position: fixed; inset: 0; z-index: 50; background: oklch(0.18 0.015 55 / 0.94); display: none; align-items: center; justify-content: center; padding: 16px; }
+  .zoom.on { display: flex; }
+  .zoom img { max-height: 88svh; width: auto; border-radius: 6px; }
+  .zoom button { position: absolute; top: 12px; right: 14px; background: none; border: 0; color: var(--paper); font-family: var(--f-mono); font-size: 14px; padding: 8px; cursor: pointer; }
+
+  /* Dobra 3 · Depoimentos */
+  .depos { padding: 64px 0 56px; border-top: 1px solid var(--rule); margin-top: 48px; }
+  .depos .cab { padding: 0 20px; }
+  .depos .eyebrow, .preco .eyebrow { color: var(--sienna); text-shadow: none; font-size: 17px; }
+  .depos .eyebrow::after, .preco .eyebrow::after { display: none; }
+  .depos h2, .preco h2 { font-family: var(--f-title); font-weight: 500; font-size: clamp(26px, 7vw, 34px); line-height: 1.12; letter-spacing: -0.01em; margin-bottom: 8px; text-wrap: balance; }
+  .depos .cab p { color: var(--ink-soft); font-size: 15px; }
+  .trilho { columns: 2; column-gap: 10px; padding: 24px 14px 0; }
+  .trilho figure { cursor: zoom-in; break-inside: avoid; margin: 0 0 10px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px oklch(0.18 0.015 55 / 0.18); background: oklch(0.2 0 0); }
+  .trilho img { width: 100%; height: auto; display: block; }
+  @media (min-width: 640px) { .trilho { columns: 3; } }
+  .dica { padding: 6px 20px 0; font-family: var(--f-mono); font-size: 12px; color: var(--ink-soft); }
+
+  /* Dobra 4 · Preço e orçamento */
+  .preco { padding: 36px 20px 40px; background: var(--paper-2); border-top: 1px solid var(--rule); }
+  .preco .tabela { margin: 24px 0 28px; border-top: 1px solid var(--rule); }
+  .preco .linha { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+  .preco .linha span { font-size: 15.5px; }
+  .preco .linha b { font-family: var(--f-mono); font-weight: 500; font-size: 15px; white-space: nowrap; }
+  .preco .linha small { display: block; font-family: var(--f-mono); font-size: 11px; color: var(--ink-soft); font-weight: 400; text-align: right; }
+  .btn-grande { height: 54px; font-size: 15px; width: 100%; border: 0; cursor: pointer; box-shadow: 0 6px 24px oklch(0.5 0.12 38 / 0.3); }
+  .preco .obs { margin-top: 14px; text-align: center; font-size: 13.5px; color: var(--ink-soft); }
+  footer.rodape { padding: 28px 20px 40px; text-align: center; font-family: var(--f-mono); font-size: 12px; color: var(--ink-soft); }
+  footer.rodape b { display: block; font-family: var(--f-title); font-weight: 500; font-size: 17px; color: var(--ink); margin-bottom: 4px; }
+
+  /* Formulário */
+  .folha { position: fixed; inset: 0; z-index: 60; display: none; align-items: flex-end; justify-content: center; background: oklch(0.18 0.015 55 / 0.55); }
+  .folha.on { display: flex; }
+  .folha form { width: 100%; max-width: 560px; background: var(--paper); border-radius: 18px 18px 0 0; padding: 22px 20px calc(24px + env(safe-area-inset-bottom)); max-height: 92svh; overflow-y: auto; animation: sobe .25s ease-out; }
+  @keyframes sobe { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+  .folha .topo-f { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 6px; }
+  .folha h3 { font-family: var(--f-title); font-weight: 500; font-size: 23px; line-height: 1.15; }
+  .folha .fechar { background: none; border: 0; font-family: var(--f-mono); font-size: 13px; color: var(--ink-soft); padding: 4px; cursor: pointer; }
+  .folha .precos-f { font-family: var(--f-mono); font-size: 12px; color: var(--ink-soft); margin-bottom: 18px; line-height: 1.6; }
+  .folha label { display: block; font-size: 14px; font-weight: 500; margin: 14px 0 6px; }
+  .folha input, .folha select { width: 100%; height: 48px; border: 1px solid var(--rule); border-radius: 10px; background: oklch(0.95 0.012 78); padding: 0 14px; font: 16px var(--f-body); color: var(--ink); }
+  .folha input:focus, .folha select:focus { outline: 2px solid var(--sienna); outline-offset: 1px; }
+  .folha .tipos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .folha .tipos input { position: absolute; opacity: 0; pointer-events: none; }
+  .folha .tipos label { margin: 0; display: flex; align-items: center; justify-content: center; height: 46px; border: 1px solid var(--rule); border-radius: 999px; font-weight: 400; font-size: 14.5px; cursor: pointer; background: oklch(0.95 0.012 78); }
+  .folha .tipos input:checked + label { border: 2px solid var(--sienna); font-weight: 500; }
+  .folha .tipos input:focus-visible + label { outline: 2px solid var(--sienna); outline-offset: 2px; }
+  .folha .so-casamento { display: none; }
+  .folha.casamento .so-casamento { display: block; }
+  .folha .erro { color: var(--sienna); font-size: 13px; margin-top: 10px; min-height: 1em; }
+  .folha .btn-grande { margin-top: 18px; }
+  .folha .privacidade { margin-top: 10px; text-align: center; font-size: 12px; color: var(--ink-soft); }
+
+  /* Computador */
+  @media (min-width: 1024px) {
+    .abertura { min-height: 88vh; }
+    .abertura img { object-position: 50% 40%; }
+    .abertura { justify-content: center; }
+    .abertura img { left: auto; right: 0; width: 56%; object-position: 50% 35%; }
+    .abertura::after { background: linear-gradient(to right, var(--ink) 0%, var(--ink) 44%, oklch(0.18 0.015 55 / 0) 60%); }
+    .abertura .texto { margin-left: max(48px, calc((100vw - 1120px) / 2)); max-width: 44%; padding-bottom: 0; }
+    .abertura header { text-align: left; padding: 28px max(48px, calc((100vw - 1120px) / 2)); }
+    .abertura .texto { max-width: 1120px; padding: 0 48px 64px; }
+    .abertura h1 { font-size: 56px; max-width: 16ch; }
+    .abertura p.sub { font-size: 18px; max-width: 46ch; }
+    .perfil.col { max-width: 935px; padding-top: 56px; }
+    .perfil .topo { gap: 64px; padding: 0 32px; }
+    .perfil .avatar { width: 150px; height: 150px; }
+    .perfil .numeros { justify-content: flex-start; gap: 48px; flex: none; }
+    .perfil .bio, .perfil .acoes, .perfil .destaques { padding-left: 32px; padding-right: 32px; }
+    .perfil .acoes { max-width: 520px; }
+    .grade { gap: 4px; }
+    .trilho.col { max-width: 935px; }
+    .trilho { columns: 3; }
+    .depos .cab.col { max-width: 935px; padding: 0 32px; }
+    .preco .col { max-width: 420px; }
+  }
+
+  .proxima { padding: 48px 20px; text-align: center; color: var(--ink-soft); font-family: var(--f-mono); font-size: 12px; border-top: 1px dashed var(--rule); }
+</style>
+<!-- Pixel da Meta: Felipe Pick Serviços (ensaios SP), conta act_1702317868181770 -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1825460815026538');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1825460815026538&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body>
+
+<!-- Dobra 1 · Abertura -->
+<section class="abertura">
+  <img src="assets/abertura.jpg" alt="Casal dançando no campo ao fim da tarde, com a serra ao fundo" fetchpriority="high">
+  <header>Felipe Pick</header>
+  <div class="texto col">
+    <p class="eyebrow">📷 Ensaios em São Paulo e região</p>
+    <h1>A história de vocês merece mais do que uma pose de estúdio.</h1>
+    <p class="sub">Documental e artística. Família, casal, gestante e casamento, cada ensaio pensado a partir de um moodboard feito com vocês.</p>
+    <a class="ver" href="#fotos">Conheça o meu trabalho <span>↓</span></a>
+  </div>
+</section>
+
+<!-- Dobra 2 · Perfil e galeria -->
+<section class="perfil col" id="fotos">
+  <div class="topo">
+    <div class="avatar"><img src="assets/avatar.jpg" alt="Felipe Pick"></div>
+    <div class="numeros">
+      <div><b>189</b><span>posts</span></div>
+      <div><b>41 mil</b><span>seguidores</span></div>
+    </div>
+  </div>
+  <div class="bio">
+    <div class="nome">Felipe Pick | Fotógrafo</div>
+    <div class="arroba">@felipe.pick</div>
+    <p>📷 Fotografia documental de família, casal e casamento<br>🎞️ Sua história em cenas de filme<br>📍 São Paulo e região</p>
+  </div>
+  <div class="acoes">
+    <a class="btn btn-cta" href="#orcamento" data-abre-form>Fazer orçamento</a>
+    <a class="btn btn-sec" href="https://www.instagram.com/felipe.pick/" target="_blank" rel="noopener">Ver no Instagram</a>
+  </div>
+  <div class="destaques" role="group" aria-label="Tipos de ensaio">
+    <button class="destaque" data-filtro="todos" aria-pressed="true"><i><img src="assets/fotos/casal-campo-danca.jpg" alt=""></i>Todos</button>
+    <button class="destaque" data-filtro="familia" aria-pressed="false"><i><img src="assets/fotos/familia-bebe.jpg" alt=""></i>Família</button>
+    <button class="destaque" data-filtro="casal" aria-pressed="false"><i><img src="assets/fotos/casal-campo-sol.jpg" alt=""></i>Casal</button>
+    <button class="destaque" data-filtro="casamento" aria-pressed="false"><i><img src="assets/fotos/casamento-dourado.jpg" alt=""></i>Casamento</button>
+  </div>
+  <div class="abas"><span>▦ Ensaios</span></div>
+  <div class="grade">
+    <button data-tipo="familia"><img src="assets/fotos/familia-d08.jpg" alt="Ensaio de família fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="familia"><img src="assets/fotos/familia-margaridas-borrada.jpg" alt="Ensaio de família fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="familia"><img src="assets/fotos/familia-d15.jpg" alt="Ensaio de família fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="familia"><img src="assets/fotos/familia-d24.jpg" alt="Ensaio de família fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="familia"><img src="assets/fotos/familia-bebe.jpg" alt="Ensaio de família fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="familia"><img src="assets/fotos/familia-d20.jpg" alt="Ensaio de família fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="familia"><img src="assets/fotos/familia-d02.jpg" alt="Ensaio de família fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="familia"><img src="assets/fotos/familia-campo-borrada.jpg" alt="Ensaio de família fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="familia"><img src="assets/fotos/familia-d36.jpg" alt="Ensaio de família fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="familia"><img src="assets/fotos/familia-d23.jpg" alt="Ensaio de família fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="familia"><img src="assets/fotos/gestante.jpg" alt="Ensaio de família fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="familia"><img src="assets/fotos/familia-d29.jpg" alt="Ensaio de família fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="familia"><img src="assets/fotos/familia-d13.jpg" alt="Ensaio de família fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="familia"><img src="assets/fotos/familia-pb-borrada.jpg" alt="Ensaio de família fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="familia"><img src="assets/fotos/familia-d16.jpg" alt="Ensaio de família fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="familia"><img src="assets/fotos/familia-d31.jpg" alt="Ensaio de família fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="familia"><img src="assets/fotos/familia-d37.jpg" alt="Ensaio de família fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="familia"><img src="assets/fotos/familia-d21.jpg" alt="Ensaio de família fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="familia"><img src="assets/fotos/familia-d35.jpg" alt="Ensaio de família fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casal"><img src="assets/fotos/casal-campo-sol.jpg" alt="Ensaio de casal fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casal"><img src="assets/fotos/casal-campo-danca.jpg" alt="Ensaio de casal fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casal"><img src="assets/fotos/casal-ipiranga.jpg" alt="Ensaio de casal fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casal"><img src="assets/fotos/casal-campo-flores.jpg" alt="Ensaio de casal fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casal"><img src="assets/fotos/casal-ig01.jpg" alt="Ensaio de casal fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casal"><img src="assets/fotos/casal-ig09.jpg" alt="Ensaio de casal fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casal"><img src="assets/fotos/casal-ig06.jpg" alt="Ensaio de casal fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casal"><img src="assets/fotos/casal-ig13.jpg" alt="Ensaio de casal fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casal"><img src="assets/fotos/casal-ig02.jpg" alt="Ensaio de casal fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casal"><img src="assets/fotos/casal-ig11.jpg" alt="Ensaio de casal fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casal"><img src="assets/fotos/casal-ig15.jpg" alt="Ensaio de casal fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casal"><img src="assets/fotos/casal-ig05.jpg" alt="Ensaio de casal fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casal"><img src="assets/fotos/casal-ig17.jpg" alt="Ensaio de casal fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casal"><img src="assets/fotos/casal-ig08.jpg" alt="Ensaio de casal fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casal"><img src="assets/fotos/casal-ig12.jpg" alt="Ensaio de casal fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casal"><img src="assets/fotos/casal-ig03.jpg" alt="Ensaio de casal fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casal"><img src="assets/fotos/casal-ig16.jpg" alt="Ensaio de casal fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casal"><img src="assets/fotos/casal-ig10.jpg" alt="Ensaio de casal fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casal"><img src="assets/fotos/casal-ig14.jpg" alt="Ensaio de casal fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d16.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d08.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d26.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d02.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d39.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d21.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d24.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-lago.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d46.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d04.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d20.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d33.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d28.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d48.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d05.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d22.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d32.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d11.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d29.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d03.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d17.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d42.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d31.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+    <button data-tipo="casamento"><img src="assets/fotos/casamento-d49.jpg" alt="Casamento fotografado por Felipe Pick" loading="lazy"></button>
+  </div>
+  <button class="ver-mais" type="button" id="verMais">Ver mais fotos</button>
+</section>
+
+<div class="zoom" id="zoom" role="dialog" aria-label="Foto ampliada"><button type="button" aria-label="Fechar">fechar ✕</button><img alt=""></div>
+
+<!-- Dobra 3 · Depoimentos -->
+<section class="depos" id="depoimentos">
+  <div class="cab col">
+    <p class="eyebrow">💬 Depois que as fotos chegam</p>
+    <h2>Feedbacks de ensaios</h2>
+    <p>Prints de verdade, do jeito que chegaram no meu WhatsApp. Toque pra ampliar.</p>
+  </div>
+  <div class="trilho col">
+    <figure><img src="assets/depo/depo-0607.jpg" alt="Mensagem de cliente agradecendo pelas fotos"></figure>
+    <figure><img src="assets/depo/depo-0611.jpg" alt="Mensagem de cliente agradecendo pelas fotos"></figure>
+    <figure><img src="assets/depo/depo-0609.jpg" alt="Mensagem de cliente agradecendo pelas fotos"></figure>
+    <figure><img src="assets/depo/depo-0601.jpg" alt="Mensagem de cliente agradecendo pelas fotos"></figure>
+    <figure><img src="assets/depo/depo-0606.jpg" alt="Mensagem de cliente agradecendo pelas fotos"></figure>
+    <figure><img src="assets/depo/depo-0612.jpg" alt="Mensagem de cliente agradecendo pelas fotos"></figure>
+    <figure><img src="assets/depo/depo-0605.jpg" alt="Mensagem de cliente agradecendo pelas fotos"></figure>
+    <figure><img src="assets/depo/depo-0610.jpg" alt="Mensagem de cliente agradecendo pelas fotos"></figure>
+    <figure><img src="assets/depo/depo-0600.jpg" alt="Mensagem de cliente agradecendo pelas fotos"></figure>
+    <figure><img src="assets/depo/depo-0603.jpg" alt="Mensagem de cliente agradecendo pelas fotos"></figure>
+    <figure><img src="assets/depo/depo-0604.jpg" alt="Mensagem de cliente agradecendo pelas fotos"></figure>
+  </div>
+</section>
+
+<!-- Dobra 4 · Preço e orçamento -->
+<section class="preco" id="orcamento">
+  <div class="col">
+    <button class="btn btn-cta btn-grande" type="button" data-abre-form>Fazer orçamento</button>
+  </div>
+</section>
+
+<footer class="rodape"><b>Felipe Pick</b>@felipe.pick · São Paulo e região</footer>
+
+<div class="folha" id="folha" role="dialog" aria-modal="true" aria-labelledby="folha-t">
+  <form id="form-orc" novalidate>
+    <div class="topo-f">
+      <h3 id="folha-t">Fazer orçamento</h3>
+      <button class="fechar" type="button" aria-label="Fechar">fechar ✕</button>
+    </div>
+    <p class="precos-f">Família, casal e gestante a partir de R$ 1.298<br>Casamento a partir de R$ 6.850</p>
+    <label for="f-nome">Seu nome</label>
+    <input id="f-nome" name="nome" autocomplete="given-name" maxlength="40" required>
+    <label for="f-tel">Seu WhatsApp</label>
+    <input id="f-tel" name="telefone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 99999-9999" maxlength="16" required>
+    <label>Tipo de ensaio</label>
+    <div class="tipos">
+      <input type="radio" name="tipo" id="t-familia" value="familia"><label for="t-familia">Família</label>
+      <input type="radio" name="tipo" id="t-gestante" value="gestante"><label for="t-gestante">Gestante</label>
+      <input type="radio" name="tipo" id="t-casal" value="casal"><label for="t-casal">Casal</label>
+      <input type="radio" name="tipo" id="t-casamento" value="casamento"><label for="t-casamento">Casamento</label>
+    </div>
+    <div class="so-casamento">
+      <label for="f-data">Data ou mês do casamento</label>
+      <input id="f-data" name="data" maxlength="30" placeholder="ex.: maio de 2027">
+    </div>
+    <p class="erro" id="f-erro" aria-live="polite"></p>
+    <button class="btn btn-cta btn-grande" type="submit">Continuar no WhatsApp</button>
+    <p class="privacidade">Seu contato fica só com a gente, pra responder o orçamento.</p>
+  </form>
+</div>
+
+<script>
+  // Formulário: salva o contato (Firestore conversas-pick, coleção leads), dispara Lead no pixel e abre o WhatsApp da Gaby.
+  (function () {
+    var WPP = '5541974033005';
+    var FIRE = 'https://firestore.googleapis.com/v1/projects/conversas-pick/databases/(default)/documents/leads?key=AIzaSyBcur_j_4mhuYdnzcHwUP6xarrKFwq_tvQ';
+    var q = new URLSearchParams(location.search);
+    var codigo = (q.get('c') || 'PG').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 6) || 'PG';
+    var mapa = { F: 'familia', C: 'casal', W: 'casamento', G: 'gestante' };
+    var tipoInicial = q.get('tipo') || mapa[codigo.charAt(0)] || '';
+    var nomes = { familia: 'ensaio de família', casal: 'ensaio de casal', gestante: 'ensaio gestante', casamento: 'casamento' };
+    var folha = document.getElementById('folha'), form = document.getElementById('form-orc'), erro = document.getElementById('f-erro');
+    function tipoAtual() { var r = form.querySelector('input[name=tipo]:checked'); return r ? r.value : ''; }
+    function marca() { folha.classList.toggle('casamento', tipoAtual() === 'casamento'); }
+    if (tipoInicial && document.getElementById('t-' + tipoInicial)) document.getElementById('t-' + tipoInicial).checked = true;
+    marca();
+    form.addEventListener('change', marca);
+    function abre(e) { if (e) e.preventDefault(); folha.classList.add('on'); erro.textContent = ''; setTimeout(function () { document.getElementById('f-nome').focus(); }, 50); if (window.fbq) fbq('track', 'InitiateCheckout'); }
+    function fecha() { folha.classList.remove('on'); }
+    document.querySelectorAll('[data-abre-form]').forEach(function (b) { b.addEventListener('click', abre); });
+    folha.querySelector('.fechar').addEventListener('click', fecha);
+    folha.addEventListener('click', function (e) { if (e.target === folha) fecha(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fecha(); });
+    var tel = document.getElementById('f-tel');
+    tel.addEventListener('input', function () {
+      var d = tel.value.replace(/\D/g, '').slice(0, 11);
+      tel.value = d.length > 6 ? '(' + d.slice(0, 2) + ') ' + d.slice(2, d.length - 4) + '-' + d.slice(-4) : d.length > 2 ? '(' + d.slice(0, 2) + ') ' + d.slice(2) : d;
+    });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var nome = form.nome.value.trim(), fone = tel.value.replace(/\D/g, ''), tipo = tipoAtual(), data = form.data.value.trim();
+      if (!nome) { erro.textContent = 'Falta o seu nome.'; form.nome.focus(); return; }
+      if (fone.length < 10) { erro.textContent = 'Confere o WhatsApp, com DDD.'; tel.focus(); return; }
+      if (!tipo) { erro.textContent = 'Escolhe o tipo de ensaio.'; return; }
+      var primeiro = nome.split(/\s+/)[0];
+      var msg = tipo === 'casamento'
+        ? 'Oi! Sou ' + primeiro + ' e queria um orçamento pro meu casamento' + (data ? ' (' + data + ')' : '') + '. (' + codigo + ')'
+        : 'Oi! Sou ' + primeiro + ' e queria saber sobre o ' + nomes[tipo] + '. (' + codigo + ')';
+      var doc = { fields: {
+        nome: { stringValue: nome.slice(0, 40) }, telefone: { stringValue: ('55' + fone).slice(0, 13) },
+        servico: { stringValue: tipo }, anuncio: { stringValue: codigo }, data: { stringValue: data.slice(0, 30) },
+        origem: { stringValue: 'pagina' }, criadoEm: { timestampValue: new Date().toISOString() }
+      } };
+      try { fetch(FIRE, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(doc), keepalive: true }).catch(function () {}); } catch (_) {}
+      if (window.fbq) fbq('track', 'Lead', { content_category: tipo });
+      location.href = 'https://wa.me/' + WPP + '?text=' + encodeURIComponent(msg);
+    });
+  })();
+</script>
+
+<script>
+  // Abre no tipo do anúncio: ?tipo=familia|casal|casamento ou ?c=F1/C1/W1...
+  (function () {
+    var q = new URLSearchParams(location.search);
+    var mapa = { F: 'familia', C: 'casal', W: 'casamento' };
+    var inicial = q.get('tipo') || mapa[(q.get('c') || '').charAt(0).toUpperCase()] || 'todos';
+    var grade = document.querySelector('.grade');
+    var itens = Array.prototype.slice.call(grade.children);
+    var botoes = document.querySelectorAll('.destaque');
+    var aberta = false, atual = 'todos', verMais = document.getElementById('verMais');
+    verMais.addEventListener('click', function () { aberta = true; filtra(atual); });
+    function filtra(t) {
+      atual = t;
+      botoes.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.filtro === t); });
+      // tipo escolhido primeiro; em "todos", mantém a ordem e só reordena se veio do anúncio
+      var ordem = itens.slice().sort(function (a, b) {
+        var alvo = t === 'todos' ? inicial : t;
+        return (b.dataset.tipo === alvo) - (a.dataset.tipo === alvo);
+      });
+      var vistos = 0, LIMITE = 9;
+      ordem.forEach(function (el) {
+        var entra = t === 'todos' || el.dataset.tipo === t;
+        if (entra) vistos++;
+        el.hidden = !entra || (!aberta && vistos > LIMITE);
+        grade.appendChild(el);
+      });
+      verMais.hidden = aberta || vistos <= LIMITE;
+    }
+    botoes.forEach(function (b) { b.addEventListener('click', function () { aberta = false; filtra(b.dataset.filtro); }); });
+    filtra(inicial);
+    var zoom = document.getElementById('zoom'), zimg = zoom.querySelector('img');
+    grade.addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b) return;
+      var i = b.querySelector('img'); zimg.src = i.src; zimg.alt = i.alt; zoom.classList.add('on');
+    });
+    zoom.addEventListener('click', function () { zoom.classList.remove('on'); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') zoom.classList.remove('on'); });
+  })();
+</script>
+
+<script>
+  // Toque no print abre ampliado (mesmo visor das fotos)
+  (function () {
+    var zoom = document.getElementById('zoom'), zimg = zoom.querySelector('img');
+    document.querySelector('.trilho').addEventListener('click', function (e) {
+      var i = e.target.closest('img'); if (!i) return;
+      zimg.src = i.src; zimg.alt = i.alt; zoom.classList.add('on');
+    });
+  })();
+</script>
+</body>
+</html>
